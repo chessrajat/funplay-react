@@ -1,0 +1,49 @@
+-> Setting up a react project
+    - npx create-react-app my-app
+    - cd my-app
+    - npm start (This just start the application on port 3000)
+
+---------------------------------------------
+-> Every thing we do in react is component.
+-> we use "className" to add css styling in here.
+-> In public folder/ index.html is the main file on setup and in src is the react code that reders into that file.
+-> In index.js we render the app 
+    - ReactDOM.render(<App />(what we want to render), document.getElementById('root'));(where we want to render)
+
+---------------------
+-> Creating a component
+    - create a new js file , import React, { Component } from 'react'
+    - we are going to make it stateful class component
+    - class Home extends Component{}
+    
+------
+-> we should alter the state directly
+-> we can send props from up to down in component tree. we can also send props in class objects 
+    props are just arguments.
+    <Beta fromAlpha={this.state.alphavalue} />
+    Now Beta will receive this prop from alpha , now we have to use this prop
+    In Beta 
+        - state {
+            alphavalue = this.props.fromAlpha(name what we give to prop)
+        }
+
+    - To update the state we use setState()
+    -------------------
+    -> To fill the data in state we use lifecycle method, these are predefined in react.
+    -> we can use these methods to perform tasks at different stages.
+        - componentDidCatch
+        - componentDidMount
+        - componentDidUpdate
+        - componentWillUpdate
+        - componentWillMount - unsafe
+        - componentWillUnmount
+        - componentWillReceiveProps
+
+-----------------------------------------------------------------------
+-> we can send childrens into the components with out self closing 
+    - <Hello > some child here </Hello>
+
+=> React Routers
+    -  npm or yarn -> npm install react-router
+    -  in App.js we need to import packages
+    - 
