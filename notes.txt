@@ -39,6 +39,8 @@
         - componentWillUnmount
         - componentWillReceiveProps
 
+-> we can use React.Fragment instead of div wrapper.
+
 -----------------------------------------------------------------------
 -> we can send childrens into the components with out self closing 
     - <Hello > some child here </Hello>
@@ -46,4 +48,36 @@
 => React Routers
     -  npm or yarn -> npm install react-router
     -  in App.js we need to import packages
+    -  <Route path="/" component={<Home />} exact /> ,,  exact defines that it is a exact path not a dynamic
+    -  <Route path="/:movieId" component={Movie} exact /> ,, :movieId is the variable we can pass it through link
+    -  import {Link} from 'react-router-dom' ,, creating links
+    - <Link to="/"> Home </Link>
+
+-> going to use reactstrap to use bootstrap in react
+
+-> Use functional component where user don't interact only data is shown
+-> we should type check our props
+    -> we can specify default props to send 
+    -> Moviethumb.js
+
+-> Build application
+    -> npm run build
+    -> this will create a build folder with all the files
+
+-> Can use async and await instead of lots of then
+
+---------------------------
+-> state with local storage
+    -> used in Home.js
+    -> retreving localstorage
+        -> localstorage.getItem('itemname')
+
+
+
+
+
+
+----------------------------
+-> deploy to firebase
+    - go to firebase hosting , install firebase-tools, init firebase hosting
     - 

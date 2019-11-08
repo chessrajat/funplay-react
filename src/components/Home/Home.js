@@ -19,9 +19,21 @@ class Home extends Component{
     }
 
     componentDidMount() {
+
         this.setState({ loading: true })
         const endPoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
         this.fetchMovies(endPoint);
+
+        // // gettin state from the local storage
+        // if (localStorage.getItem('HomeState')){
+        //     const state = JSON.parse(localStorage.getItem('HomeState'));
+        //     this.setState({...state})
+        // }else {
+        //     this.setState({ loading: true })
+        //     const endPoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+        //     this.fetchMovies(endPoint);
+        // }
+      
     } 
 
     loadMoreBtn = () => { 
@@ -71,6 +83,9 @@ class Home extends Component{
                     loading: false,
                     currentPage: result.page,
                     totalPages: result.total_pages
+                }, () => {
+                        //saving data to local storage
+                        localStorage.setItem('HomeState', JSON.stringify(this.state));
                 });
             });
     }
